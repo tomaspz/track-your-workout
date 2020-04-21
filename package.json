@@ -1,0 +1,19 @@
+{
+  "name": "track_your_workout",
+  "version": "1.0.0",
+  "description": "App created with Node, Express, Mongoose and MongoDB. It allows a user to create and track daily workouts by logging multiple exercises on a given day.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "seed": "node seeders/seed.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongoose": "^5.3.16",
+    "morgan": "^1.9.1"
+  }
+}
