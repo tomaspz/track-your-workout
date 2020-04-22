@@ -10,6 +10,7 @@ App created with the following technologies:
 * [MongoJS](https://www.npmjs.com/package/mongojs) is a module for mongodb, that emulates the official mongodb API as much as possible.
 * [Mongoose schema](http://mongoosejs.com/), which is an [ODM (Object Document Mapper)](https://www.tutorialspoint.com/phalcon/phalcon_object_document_mapper.htm) that  maps objects with a Document Database like Mongo. 
 * [Robo 3T (formerly Robomongo)](https://robomongo.org/download), a free, lightweight, open-source MongoDB GUI with an embedded mongo shell, real auto-completion, and support for asynchronous operations. 
+* [Morgan](https://www.npmjs.com/package/morgan) an HTTP request logger middleware for node.js
 * [CRUD Operations](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete). In computer programming, Create, Read, Update, and Delete (CRUD) are the 4 basic functions of persistent storage.
 
 ## User Story
