@@ -11,29 +11,23 @@ const WorkoutSchema = new Schema(
     },
     exercises: [
       {
-        type: String,
-        trim: true,
-        required: "You must enter the type of exercise"
-      },
-      {
-        name: String,
-        trim: true,
-        required: "You must enter your name"
-      },
-      {
-        duration: Number,
-        required: "You must enter the exercise duration (minutes)"
-      },
-      {
-        weight: Number
-      },
-      {
-        reps: Number
-      },
-      {
-        sets: Number
-      },
-      {
+        type: {
+          type: String,
+          trim: true,
+          required: "Please, enter the type of exercise"
+        },
+        name: {
+          type: String,
+          trim: true,
+          required: "Please, enter your name"
+        },
+        duration: {
+          type: Number,
+          required: "Please, enter the exercise duration (minutes)"
+        },
+        weight: Number,
+        reps: Number,
+        sets: Number,
         distance: Number
       }
     ]
@@ -41,10 +35,15 @@ const WorkoutSchema = new Schema(
   opts
 );
 
+// Return a single number, the total duration of the exercises
+// Loops through the exercises array and adds the duration of each exercise
+// Reduce uses an accumulator and the current value
 WorkoutSchema.virtual("totalDuration").get(function () {
-  return this.exercises.reduce((total, exercise) => {
-    return total + exercise.duration;
-  }, 0);
+  const sum = this.exercises.reduce((accum, curr) => {
+    return accum.duration + curr.duration;
+  });
+  // console.log(sum);
+  return sum.duration;
 });
 
 const Workout = mongoose.model("Workout", WorkoutSchema);

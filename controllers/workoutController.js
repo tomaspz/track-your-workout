@@ -18,7 +18,16 @@ router.get("/api/workouts", (req,res) => {
 });
 
 router.get("/api/workouts/:id", (req,res) => {
-    const idWorkout = req.params.id;
+
+    db.Workout.findById(req.params.id)
+    .populate("exercises")
+    .then(workout =>{
+        res.json(workout);
+    })
+    .catch( err => {
+        console.log(err);
+        res.json(err);
+    })
 
 });
 
