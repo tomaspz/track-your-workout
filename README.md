@@ -40,6 +40,9 @@ The user can:
 
 ### Deployed Application URL
 
-
+[Heroku Live App](https://logworkout.herokuapp.com/)
 
 ### Github Repository URL
+
+[GitHub App Repository](https://github.com/tomaspz/track-your-workout)
+
