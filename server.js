@@ -11,7 +11,7 @@ app.use(express.static("public"));
 app.use(morgan("dev"));
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/workout",
+  process.env.MONGODB_URI || "mongodb://user1:password1@ds139619.mlab.com:39619/heroku_7301w9z9",
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
