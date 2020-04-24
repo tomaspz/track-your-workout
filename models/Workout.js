@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-
 const Schema = mongoose.Schema;
 const opts = { toJSON: { virtuals: true } };
 
@@ -7,7 +6,9 @@ const WorkoutSchema = new Schema(
   {
     day: {
       type: Date,
-      default: Date.now
+      default: function () {
+        new Date()
+      }
     },
     exercises: [
       {
@@ -25,11 +26,19 @@ const WorkoutSchema = new Schema(
           type: Number,
           required: "Please, enter the exercise duration (minutes)"
         },
-        weight: Number,
-        reps: Number,
-        sets: Number,
-        distance: Number
-      }
+        weight: {
+          type: Number
+        },
+        reps: {
+          type: Number
+        },
+        sets: {
+          type: Number
+        },
+        distance: {
+          type: Number
+        },
+      },
     ]
   },
   opts
