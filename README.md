@@ -45,3 +45,7 @@ The user can:
 ### Github Repository URL
 
 [GitHub App Repository](https://github.com/tomaspz/track-your-workout)
+
+### Screenshot
+
+![Track your workout](./public/screenshot.png)
