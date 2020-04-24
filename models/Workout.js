@@ -1,14 +1,11 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const opts = { toJSON: { virtuals: true } };
 
 const WorkoutSchema = new Schema(
   {
     day: {
       type: Date,
-      default: function () {
-        new Date()
-      }
+      default: Date.now()
     },
     exercises: [
       {
@@ -37,12 +34,15 @@ const WorkoutSchema = new Schema(
         },
         distance: {
           type: Number
-        },
-      },
+        }
+      }
     ]
   },
-  opts
-);
+  { 
+    toJSON: { 
+      virtuals: true 
+    } 
+  });
 
 // Return a single number, the total duration of the exercises
 // Loops through the exercises array and adds the duration of each exercise

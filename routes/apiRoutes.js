@@ -4,7 +4,7 @@ module.exports = function (app) {
 
     // GET ROUTES
 
-    app.get("api/workouts", (req, res) => {
+    app.get("/api/workouts", (req, res) => {
         console.log(req);
         Workout.find({})
             .then(data => {
@@ -14,9 +14,8 @@ module.exports = function (app) {
             });
     });
 
-    app.get("api/workouts/range", (req, res) => {
+    app.get("/api/workouts/range", (req, res) => {
         Workout.find({})
-            .sort({day: 'asc'})
             .limit(7)
             .then(data => {
                 res.json(data);
